@@ -196,6 +196,8 @@ export default {
     };
     if (ALLOWED_ORIGINS.includes(origin)) {
       cors["Access-Control-Allow-Origin"] = origin;
+    } else {
+      cors["Access-Control-Allow-Origin"] = "*";
     }
 
     if (request.method === "OPTIONS") {
