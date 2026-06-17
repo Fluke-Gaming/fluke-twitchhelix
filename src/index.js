@@ -184,10 +184,19 @@ export default {
     const url = new URL(request.url);
     const { pathname } = url;
 
+    const ALLOWED_ORIGINS = [
+      "https://flukegaming.com",
+      "https://test.flukegaming.com",
+    ];
+
     const cors = {
-      "Access-Control-Allow-Origin": "*",
       "Access-Control-Allow-Methods": "GET, OPTIONS",
+      "Access-Control-Allow-Headers": "Content-Type",
+      "Content-Type":                 "application/json",
     };
+    if (ALLOWED_ORIGINS.includes(origin)) {
+      cors["Access-Control-Allow-Origin"] = origin;
+    }
 
     if (request.method === "OPTIONS") {
       return new Response(null, { status: 204, headers: cors });
