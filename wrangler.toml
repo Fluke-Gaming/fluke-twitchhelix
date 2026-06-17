@@ -12,4 +12,4 @@ invocation_logs = true
 
 [[kv_namespaces]]
 binding = "TWITCH_KV"
-id = "fluke_twitch_kv"
+id = "d510a3be879c4c06a62a285fa7536725"
