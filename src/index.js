@@ -1,5 +1,5 @@
 // ─── Config ──────────────────────────────────────────────────────────────────
-const CHANNEL = "flukegaming";
+const CHANNEL = "flukegamingttv";
 const KV_TOKEN_KEY = "twitch_access_token";
 
 // env bindings (wrangler.toml + secrets):
