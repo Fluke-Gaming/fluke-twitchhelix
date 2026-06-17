@@ -200,16 +200,21 @@ export default {
     try {
       let response;
 
-      if (pathname === "/stream-status") {
-        response = await handleStreamStatus(env);
-      } else if (pathname === "/channel-info") {
-        response = await handleChannelInfo(env);
-      } else if (pathname === "/videos") {
-        response = await handleVideos(env, url);
-      } else if (pathname === "/clips") {
-        response = await handleClips(env, url);
-      } else {
-        response = json({ error: "Not found" }, 404);
+      switch(pathname) {
+        case "/stream-status":
+          response = await handleStreamStatus(env);
+          break;
+        case "/channel-info":
+          response = await handleChannelInfo(env);
+          break;
+        case "/videos":
+          response = await handleVideos(env, url);
+          break;
+        case "/clips":
+          response = await handleClips(env, url);
+          break;
+        default:
+          response = json({ error: "Not found" }, 404);
       }
 
       // Merge CORS into response headers
